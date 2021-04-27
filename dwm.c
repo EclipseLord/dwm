@@ -191,6 +191,7 @@ static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
 static void resizeclient(Client *c, int x, int y, int w, int h);
+static void moveresize(const Arg *arg);
 static void resizemouse(const Arg *arg);
 static void restack(Monitor *m);
 static void run(void);
@@ -1288,6 +1289,24 @@ resizeclient(Client *c, int x, int y, int w, int h)
 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
 	configure(c);
 	XSync(dpy, False);
+}
+
+void
+moveresize(const Arg *arg)
+{
+	XEvent ev;
+	Monitor *m = selmon;
+
+	if(!(m->sel && arg && arg->v && m->sel->isfloating))
+		return;
+
+	resize(m->sel, m->sel->x + ((int *)arg->v)[0],
+		m->sel->y + ((int *)arg->v)[1],
+		m->sel->w + ((int *)arg->v)[2],
+		m->sel->h + ((int *)arg->v)[3],
+		True);
+
+	while(XCheckMaskEvent(dpy, EnterWindowMask, &ev));	
 }
 
 void
