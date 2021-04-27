@@ -33,7 +33,8 @@ dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 dwmblocks: ${OBJ_BLOCKS}
-	${CC} -o dwmblocks/$@ ${OBJ} ${LDFLAGS}
+	mv $(shell basename -- $@).o dwmblocks/$(shell basename -- $@).o
+	${CC} -o dwmblocks/$@ ${OBJ_BLOCKS} ${LDFLAGS}
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
