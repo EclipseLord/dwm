@@ -145,7 +145,6 @@ static Button buttons[] = {
 
 static const char* AutoStart[] = {
 	{"picom &"},
-	{"/usr/bin/feh --bg-fill '/home/eclipse/Backgrounds/DefaultBG.jpg' &"},
-	{"dwmblocks &"}
+	{"/usr/bin/feh --bg-fill '/home/eclipse/Backgrounds/DefaultBG.jpg' &"}
 };
 

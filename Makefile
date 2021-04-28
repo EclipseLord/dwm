@@ -44,7 +44,7 @@ clean_configs:
 	rm config.h
 	rm st/config.h
 
-install: all
+install: all st install_st
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
