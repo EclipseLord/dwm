@@ -6,10 +6,7 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-SRC_BLOCKS = dwmblocks/dwmblocks.c
-OBJ_BLOCKS = ${SRC_BLOCKS:.c=.o}
-
-all: options dwm dwmblocks
+all: options dwm st
 
 options:
 	@echo dwm build options:
@@ -21,7 +18,6 @@ options:
 	${CC} -c ${CFLAGS} $<
 
 ${OBJ}: config.h config.mk
-${OBJ_BLOCKS}: blocks.h
 
 config.h:
 	cp config.def.h $@
@@ -32,15 +28,21 @@ blocks.h:
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
-dwmblocks: ${OBJ_BLOCKS}
-	mv $(shell basename -- $@).o dwmblocks/$(shell basename -- $@).o
-	${CC} -o dwmblocks/$@ ${OBJ_BLOCKS} ${LDFLAGS}
+st:
+	$(MAKE) -C st
+
+install_st:
+	$(MAKE) -C st install
+
+clean_st:
+	$(MAKE) -C st clean
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 
-cleanblocks:
-	rm -f dwmblocks/${OBJ_BLOCKS}
+clean_configs:
+	rm config.h
+	rm st/config.h
 
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
@@ -50,11 +52,8 @@ install: all
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	
-	cp -f dwmblocks/dwmblocks ${DESTDIR}${PREFIX}/bin
-	chmod 755 ${DESTDIR}${PREFIX}/bin/dwmblocks
-
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
-.PHONY: all options clean cleanblocks install uninstall
+.PHONY: all options clean st install uninstall
