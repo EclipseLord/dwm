@@ -1,0 +1,497 @@
+[
+ {
+  "directory": "/home/eclipse/dwm",
+  "arguments": [
+   "cc",
+   "-c",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wno-deprecated-declarations",
+   "-Os",
+   "-I/usr/X11R6/include",
+   "-I/usr/include/freetype2",
+   "-D_DEFAULT_SOURCE",
+   "-D_BSD_SOURCE",
+   "-D_POSIX_C_SOURCE=2",
+   "-DVERSION=\"6.2\"",
+   "-DXINERAMA",
+   "drw.c"
+  ],
+  "file": "drw.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm",
+  "arguments": [
+   "cc",
+   "-c",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wno-deprecated-declarations",
+   "-Os",
+   "-I/usr/X11R6/include",
+   "-I/usr/include/freetype2",
+   "-D_DEFAULT_SOURCE",
+   "-D_BSD_SOURCE",
+   "-D_POSIX_C_SOURCE=2",
+   "-DVERSION=\"6.2\"",
+   "-DXINERAMA",
+   "dwm.c"
+  ],
+  "file": "dwm.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm",
+  "arguments": [
+   "cc",
+   "-c",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wno-deprecated-declarations",
+   "-Os",
+   "-I/usr/X11R6/include",
+   "-I/usr/include/freetype2",
+   "-D_DEFAULT_SOURCE",
+   "-D_BSD_SOURCE",
+   "-D_POSIX_C_SOURCE=2",
+   "-DVERSION=\"6.2\"",
+   "-DXINERAMA",
+   "util.c"
+  ],
+  "file": "util.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "slstatus.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "slstatus.c"
+  ],
+  "file": "slstatus.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/battery.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/battery.c"
+  ],
+  "file": "components/battery.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/cpu.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/cpu.c"
+  ],
+  "file": "components/cpu.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/datetime.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/datetime.c"
+  ],
+  "file": "components/datetime.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/disk.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/disk.c"
+  ],
+  "file": "components/disk.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/entropy.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/entropy.c"
+  ],
+  "file": "components/entropy.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/hostname.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/hostname.c"
+  ],
+  "file": "components/hostname.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/ip.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/ip.c"
+  ],
+  "file": "components/ip.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/kernel_release.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/kernel_release.c"
+  ],
+  "file": "components/kernel_release.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/keyboard_indicators.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/keyboard_indicators.c"
+  ],
+  "file": "components/keyboard_indicators.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/keymap.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/keymap.c"
+  ],
+  "file": "components/keymap.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/load_avg.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/load_avg.c"
+  ],
+  "file": "components/load_avg.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/netspeeds.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/netspeeds.c"
+  ],
+  "file": "components/netspeeds.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/num_files.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/num_files.c"
+  ],
+  "file": "components/num_files.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/ram.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/ram.c"
+  ],
+  "file": "components/ram.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/run_command.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/run_command.c"
+  ],
+  "file": "components/run_command.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/separator.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/separator.c"
+  ],
+  "file": "components/separator.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/swap.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/swap.c"
+  ],
+  "file": "components/swap.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/temperature.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/temperature.c"
+  ],
+  "file": "components/temperature.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/uptime.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/uptime.c"
+  ],
+  "file": "components/uptime.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/user.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/user.c"
+  ],
+  "file": "components/user.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/volume.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/volume.c"
+  ],
+  "file": "components/volume.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "components/wifi.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "components/wifi.c"
+  ],
+  "file": "components/wifi.c"
+ },
+ {
+  "directory": "/home/eclipse/dwm/slstatus",
+  "arguments": [
+   "cc",
+   "-o",
+   "util.o",
+   "-c",
+   "-I/usr/X11R6/include",
+   "-D_DEFAULT_SOURCE",
+   "-std=c99",
+   "-pedantic",
+   "-Wall",
+   "-Wextra",
+   "-Os",
+   "util.c"
+  ],
+  "file": "util.c"
+ }
+]
