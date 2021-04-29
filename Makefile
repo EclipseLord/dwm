@@ -6,7 +6,7 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm st
+all: options dwm st slstatus
 
 options:
 	@echo dwm build options:
@@ -22,29 +22,38 @@ ${OBJ}: config.h config.mk
 config.h:
 	cp config.def.h $@
 
-blocks.h:
-	cp dwmblocks/blocks.def.h dwmblocks/$@
-
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 st:
 	$(MAKE) -C st
 
+slstatus:
+	$(MAKE) -C slstatus
+
 install_st:
 	$(MAKE) -C st install
+
+install_slstatus:
+	$(MAKE) -C slstatus install
 
 clean_st:
 	$(MAKE) -C st clean
 
-clean:
-	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
+clean_slstatus:
+	$(MAKE) -C slstatus clean
+
+clean_dwm:
+	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz	
 
 clean_configs:
-	rm config.h
-	rm st/config.h
+	rm -f config.h
+	rm -f st/config.h
+	rm -f slstatus/config.h
 
-install: all st install_st
+clean: clean_dwm clean_st clean_slstatus clean_configs
+
+install: all st install_st slstatus install_slstatus
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
@@ -56,4 +65,4 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
-.PHONY: all options clean st install uninstall
+.PHONY: all options st slstatus install uninstall
