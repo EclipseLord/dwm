@@ -1,3 +1,6 @@
 [submodule "st"]
 	path = st
 	url = https://github.com/EclipseLord/st
+[submodule "slstatus"]
+	path = slstatus
+	url = https://github.com/EclipseLord/slstatus
