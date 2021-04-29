@@ -1,4 +1,4 @@
-# dwm - dynamic window manager
+# dwm - dynamic window manager hah
 # See LICENSE file for copyright and license details.
 
 include config.mk
