@@ -34,7 +34,7 @@ slstatus_uninstall:
 slstatus_clean:
 	$(MAKE) -C slstatus clean
 
-all: dwm st slstatus
+all: clean_configs dwm st slstatus
 install: all dwm_install st_install slstatus_install
 uninstall: dwm_uninstall st_uninstall slstatus_uninstall
 clean: dwm_clean slstatus_clean slstatus_clean
