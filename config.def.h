@@ -147,5 +147,6 @@ static const char* AutoStart[] = {
 	{"picom &"},
 	{"/usr/bin/feh --bg-fill '/home/eclipse/Backgrounds/DefaultBG.jpg' &"},
         {"slstatus &"},
+        {"discord &"},
 };
 
