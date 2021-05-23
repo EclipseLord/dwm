@@ -34,14 +34,27 @@ slstatus_uninstall:
 slstatus_clean:
 	$(MAKE) -C slstatus clean
 
-all: clean_configs dwm st slstatus
-install: all dwm_install st_install slstatus_install
-uninstall: dwm_uninstall st_uninstall slstatus_uninstall
-clean: dwm_clean slstatus_clean slstatus_clean
+dmenu:
+	$(MAKE) -C dmenu
+
+dmenu_install:
+	$(MAKE) -C dmenu install
+
+dmenu_uninstall:
+	$(MAKE) -C dmenu uninstall
+
+dmenu_clean:
+	$(MAKE) -C dmenu clean
+
+all: clean_configs dwm st slstatus dmenu
+install: all dwm_install st_install slstatus_install dmenu_install
+uninstall: dwm_uninstall st_uninstall slstatus_uninstall dmenu_uninstall
+clean: dwm_clean slstatus_clean slstatus_clean dmenu_clean
 
 clean_configs:
 	rm -f config.h
 	rm -f st/config.h
 	rm -f slstatus/config.h
+	rm -f dmenu/config.h
 
 .PHONY: all dwm st slstatus clean install uninstall
