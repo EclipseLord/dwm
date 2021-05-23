@@ -57,4 +57,4 @@ clean_configs:
 	rm -f slstatus/config.h
 	rm -f dmenu/config.h
 
-.PHONY: all dwm st slstatus clean install uninstall
+.PHONY: all dwm st slstatus clean dmenu install uninstall
