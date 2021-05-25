@@ -489,8 +489,16 @@ cleanup(void)
 	for (i = 0; i < CurLast; i++)
 		drw_cur_free(drw, cursor[i]);
 	for (i = 0; i < LENGTH(colors); i++)
-		free(scheme[i]);
-	XDestroyWindow(dpy, wmcheckwin);
+		free(scheme[i]); 
+        // Kills autostarted programs, pointless but I implemented it just incase
+	int len = 0;
+        for(const char** i = AutoStart; *i; len++, i++)
+            while(*i++);
+
+        for(size_t i = 0; i < len; i++)
+		kill(AutoStart[i], 0);       
+
+        XDestroyWindow(dpy, wmcheckwin);
 	drw_free(drw);
 	XSync(dpy, False);
 	XSetInputFocus(dpy, PointerRoot, RevertToPointerRoot, CurrentTime);
@@ -1525,8 +1533,13 @@ restack(Monitor *m)
 void
 run(void)
 {
-	for(size_t i = 0; i < sizeof(AutoStart)/sizeof(*AutoStart); i++)
-		system(AutoStart[i]);
+	// Starts programs set in AutoStart
+        int len = 0;
+        for(const char** i = AutoStart; *i; len++, i++)
+            while(*i++);
+
+        for(size_t i = 0; i < len; i++)
+		system(AutoStart[i]);        
 
 	XEvent ev;
 	/* main event loop */
