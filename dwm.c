@@ -183,6 +183,7 @@ static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
 static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
+static void enterresize();
 static void moveresize(const Arg *arg);
 static void moveresizeedge(const Arg *arg);
 static void movemouse(const Arg *arg);
@@ -491,11 +492,7 @@ cleanup(void)
 	for (i = 0; i < LENGTH(colors); i++)
 		free(scheme[i]); 
         // Kills autostarted programs, pointless but I implemented it just incase
-	int len = 0;
-        for(const char** i = AutoStart; *i; len++, i++)
-            while(*i++);
-
-        for(size_t i = 0; i < len; i++)
+        for(size_t i = 0; i < LENGTH(AutoStart); i++)
 		kill(AutoStart[i], 0);       
 
         XDestroyWindow(dpy, wmcheckwin);
@@ -1218,8 +1215,8 @@ moveresize(const Arg *arg) {
 
 	if (!c || !arg)
 		return;
-	if (selmon->lt[selmon->sellt]->arrange && !c->isfloating)
-		return;
+        if (selmon->lt[selmon->sellt]->arrange && !c->isfloating)
+            return;
 	if (sscanf((char *)arg->v, "%d%c %d%c %d%c %d%c", &x, &xAbs, &y, &yAbs, &w, &wAbs, &h, &hAbs) != 8)
 		return;
 
@@ -1534,11 +1531,7 @@ void
 run(void)
 {
 	// Starts programs set in AutoStart
-        int len = 0;
-        for(const char** i = AutoStart; *i; len++, i++)
-            while(*i++);
-
-        for(size_t i = 0; i < len; i++)
+        for(size_t i = 0; i < LENGTH(AutoStart); i++)
 		system(AutoStart[i]);        
 
 	XEvent ev;
